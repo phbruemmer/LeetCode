@@ -12,11 +12,11 @@ class Solution(object):
         :rtype: ListNode
         """
         carry = 0
-        n = ListNode(0)
-        new_node = n
+        start = ListNode(0)
+        current = start
+
         while l1 or l2 or carry:
-            v1 = 0
-            v2 = 0
+            v1 = v2 = 0
             if l1:
                 v1 = l1.val
                 l1 = l1.next
@@ -24,10 +24,9 @@ class Solution(object):
                 v2 = l2.val
                 l2 = l2.next
             carry, val = divmod(v1 + v2 + carry, 10)
-            n.next = ListNode(val)
-            n = n.next
-
-        return new_node.next
+            start.next = ListNode(val)
+            start = start.next
+        return current.next
 
 
 l1 = ListNode(5)
