@@ -11,28 +11,30 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        def linked_list(node):
-            print(node)
-            output = ListNode(node)
-        val1 = l1
-        val2 = l2
+        carry = 0
+        n = ListNode(0)
+        new_node = n
+        while l1 or l2 or carry:
+            v1 = 0
+            v2 = 0
+            if l1:
+                v1 = l1.val
+                l1 = l1.next
+            if l2:
+                v2 = l2.val
+                l2 = l2.next
+            carry, val = divmod(v1 + v2 + carry, 10)
+            n.next = ListNode(val)
+            n = n.next
 
-        remainder = 0
-
-        while val1:
-            out = val1.val + val2.val
-            linked_list(out)
-            val1 = val1.next
-            val2 = val2.next
+        return new_node.next
 
 
-l1 = ListNode(2)
-l1.next = ListNode(4)
-l1.next.next = ListNode(3)
+l1 = ListNode(5)
 
-l2 = ListNode(5)
-l2.next = ListNode(6)
-l2.next.next = ListNode(4)
+
+l2 = ListNode(1)
 
 solution_instance = Solution()
 sol = solution_instance.addTwoNumbers(l1, l2)
+print(sol.val)
