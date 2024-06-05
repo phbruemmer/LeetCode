@@ -9,6 +9,6 @@ class Solution(object):
 
 
 solution_instance = Solution()
-parenthesis = "()[]{}"
-sol = solution_instance.isValid(parenthesis)
+parenthesisStr = "()[]{}"
+sol = solution_instance.isValid(parenthesisStr)
 print(sol)
