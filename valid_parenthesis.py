@@ -8,8 +8,8 @@ class Solution(object):
         valid = True
         last_opening_brackets = []
 
-        for i in range(0, len(s)):
-            current_bracket = s[i]
+        for i in s:
+            current_bracket = i
             if current_bracket == '(' or current_bracket == '{' or current_bracket == '[':
                 last_opening_brackets.append(current_bracket)
             elif current_bracket in opposite:
