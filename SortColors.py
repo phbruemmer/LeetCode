@@ -11,15 +11,17 @@ class Solution(object):
             cur_num = nums[counter]
 
             if cur_num == 2:
+                nums.pop(counter)
                 nums.append(2)
             elif cur_num == 1:
+                nums.pop(counter)
                 nums.insert(last_zero_index, 1)
                 counter += 1
-            else:
+            elif cur_num == 0:
+                nums.pop(counter)
                 nums.insert(0, 0)
                 counter += 1
                 last_zero_index += 1
-            nums.pop(counter)
         print(nums)
 
 
