@@ -13,9 +13,6 @@ class Solution(object):
         return max(values.items(), key=lambda item: item[1])[0]
 
 
-
-
-
 si = Solution()
 sol = si.findCenter([[1,2],[5,1],[1,3],[1,4]])
 print(sol)
