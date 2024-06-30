@@ -4,15 +4,23 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        opening_brackets = {'(': 0,
-                            ')': 0}
+        brackets = [-1]
+        result = 0
+        for i in range(0, len(s)):
+            if s[i] == '(':
+                brackets.append(i)
+            else:
+                brackets.pop()
+                if len(brackets) == 0:
+                    brackets.append(i)
+                result = max(result, i - brackets[-1])
+        return result
 
-        # 
 
 
 
 
-        """longest_valid_parenthesis = ""
+    """longest_valid_parenthesis = ""
         temp = ""
 
         for i in s:
@@ -45,7 +53,6 @@ class Solution(object):
             result = min_val * 2"""
 
 
-
 si = Solution()
-sol = si.longestValidParentheses("()()(()")
+sol = si.longestValidParentheses("(()))")
 print(sol)
