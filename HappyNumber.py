@@ -15,7 +15,6 @@ class Solution(object):
         return n == 1
 
 
-
 si = Solution()
 sol = si.isHappy(2)
 print(sol)
