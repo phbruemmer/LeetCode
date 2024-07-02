@@ -22,7 +22,7 @@ class Solution(object):
 
 
 solution_instance = Solution()
-sol = solution_instance.isPalindrome(101)
+sol = solution_instance.isPalindrome(121)
 print(sol)
 
 """
