@@ -25,5 +25,5 @@ class Solution(object):
 
 
 si = Solution()
-sol = si.reverse(0)
+sol = si.reverse(75438975)
 print(sol)

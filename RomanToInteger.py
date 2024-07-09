@@ -22,6 +22,7 @@ class Solution(object):
             result += current
         return result
 
+
 solution_instance = Solution()
 romanStr = "MCMXCIV"
 sol = solution_instance.romanToInt(romanStr)
