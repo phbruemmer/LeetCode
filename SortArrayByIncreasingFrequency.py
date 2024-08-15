@@ -16,5 +16,5 @@ class Solution(object):
 
 
 si = Solution()
-sol = si.frequencySort([2,3,1,3,2])
+sol = si.frequencySort([2, 3, 1, 3, 2])
 print(sol)
