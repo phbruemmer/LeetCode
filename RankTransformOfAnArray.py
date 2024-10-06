@@ -16,7 +16,6 @@ class Solution(object):
         return final
 
 
-
 arr = [100, 100, 100]
 si = Solution()
 sol = si.arrayRankTransform(arr)
