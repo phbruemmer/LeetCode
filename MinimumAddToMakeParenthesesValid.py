@@ -1,19 +1,17 @@
 class Solution(object):
-    def minAddToMakeValid(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        parenthesis = {
-            '(': 0,
-            ')': 0
-        }
-
-        for i in s:
-            parenthesis[i] += 1
-        return max(parenthesis['('], parenthesis[')']) - min(parenthesis['('], parenthesis[')'])
+    def minAddToMakeValid(self, s: str) -> int:
+        stack = []
+        i = 0
+        parentheses = {")": "("}
+        while i < len(s):
+            if stack and stack[-1] == parentheses.get(s[i], None):
+                stack.pop()
+            else:
+                stack.append(s[i])
+            i += 1
+        return len(stack)
 
 
 si = Solution()
-sol = si.minAddToMakeValid("())")
+sol = si.minAddToMakeValid("(((")
 print(sol)
