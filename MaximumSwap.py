@@ -11,7 +11,6 @@ class Solution(object):
             for y in range(i, len(temp_num)):
                 if temp_num[y] >= temp_num[biggest_num_index]:
                     biggest_num_index = y
-
             if temp_num[biggest_num_index] > temp_num[i]:
                 temp_num[biggest_num_index], temp_num[i] = temp_num[i], temp_num[biggest_num_index]
                 swapped_num = int(''.join(temp_num))
